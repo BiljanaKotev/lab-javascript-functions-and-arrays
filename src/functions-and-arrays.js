@@ -10,27 +10,20 @@ function maxOfTwoNumbers(num1, num2) {
   return number;
 }
 
-// Iteration #2: Find longest word
-// check each word inside the array for the lenght
-// how to check the length of each word inside the array? forEach
-// return the first occurence of the word that has the same lenghts
 const words = ["mystery", "brother", "aviator", "crocodile", "pearl", "orchard", "crackpot"];
-
-// let lengthOfEachWord = [];
-// let firstOccurenceOfSameLength = [];
-
-// words.forEach(function (word) {
-//   lengthOfEachWord.push(word.length);
-// });
-
-// console.log(lengthOfEachWord);
 
 function findLongestWord(words) {
   if (words.length === 0) {
     return null;
-  } else {
-    return words[0];
   }
+  let longestWord = "";
+
+  for (let i = 0; i < words.length; i++) {
+    if (longestWord.length < words[i].length) {
+      longestWord = words[i];
+    }
+  }
+  return longestWord;
 }
 
 // Iteration #3: Calculate the sum
