@@ -69,15 +69,44 @@ function averageNumbers(numbersAvg) {
 // Level 2: Array of strings
 const wordsArr = ["seat", "correspond", "linen", "motif", "hole", "smell", "smart", "chaos", "fuel", "palace"];
 
-function averageWordLength() {}
+function averageWordLength(wordsArr) {
+  let avg = 0;
+
+  for (let i = 0; i < wordsArr.length; i++) {
+    avg += wordsArr[i].length;
+  }
+  if (wordsArr.length === 0) {
+    return null;
+  }
+  return avg / wordsArr.length;
+}
 
 // Bonus - Iteration #4.1
-function avg() {}
+const mixedArr = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
+
+function avg(mixedArr) {
+  let sum = 0;
+  for (let i = 0; i < mixedArr.length; i++) {
+    if (typeof mixedArr[i] === "string") {
+      sum += mixedArr[i].length;
+    } else if (mixedArr[i] === true) {
+      sum += 1;
+    } else if (mixedArr[i] === false) {
+      sum += 0;
+    } else if (typeof mixedArr[i] === "number") {
+      sum += mixedArr[i];
+    }
+  }
+
+  if (mixedArr.length === 0) {
+    return null;
+  } else return sum / mixedArr.length;
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = ["crab", "poison", "contagious", "simple", "bring", "sharp", "playground", "poison", "communion", "simple", "bring"];
 
-function uniquifyArray() {}
+function uniquifyArray(wordsUnique) {}
 
 // Iteration #6: Find elements
 const wordsFind = ["machine", "subset", "trouble", "starting", "matter", "eating", "truth", "disobedience"];
