@@ -40,12 +40,26 @@ function sumNumbers(numbers) {
   return sum;
 }
 
-console.log(sumNumbers(numbers));
+const mixedArray = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
 
 // Iteration #3.2 Bonus:
-function sum() {
-  if (sum.length === 0) {
+function sum(mixedArray) {
+  let sum = 0;
+  for (let i = 0; i < mixedArray.length; i++) {
+    if (typeof mixedArray[i] === "string") {
+      sum += mixedArray[i].length;
+    } else if (mixedArray[i] === true) {
+      sum += 1;
+    } else if (mixedArray[i] === false) {
+      sum += 0;
+    } else if (typeof mixedArray[i] === "number") {
+      sum += mixedArray[i];
+    }
+  }
+  if (mixedArray.length === 0) {
     return 0;
+  } else {
+    return sum;
   }
 }
 
@@ -106,12 +120,33 @@ function avg(mixedArr) {
 // Iteration #5: Unique arrays
 const wordsUnique = ["crab", "poison", "contagious", "simple", "bring", "sharp", "playground", "poison", "communion", "simple", "bring"];
 
-function uniquifyArray(wordsUnique) {}
+function uniquifyArray(wordsUnique) {
+  let arrayNew = [];
+
+  wordsUnique.forEach(function (word) {
+    if (!arrayNew.includes(word)) {
+      arrayNew.push(word);
+    }
+  });
+  if (wordsUnique.length === 0) {
+    return null;
+  } else {
+    return arrayNew;
+  }
+}
 
 // Iteration #6: Find elements
 const wordsFind = ["machine", "subset", "trouble", "starting", "matter", "eating", "truth", "disobedience"];
 
-function doesWordExist() {}
+let wordsSearch = [];
+
+function doesWordExist(wordsFind) {
+  for (let i = 0; i < wordsFind.length; i++) {
+    if (wordsFind.length === 0) {
+      return null;
+    }
+  }
+}
 
 // Iteration #7: Count repetition
 const wordsCount = ["machine", "matter", "subset", "trouble", "starting", "matter", "eating", "matter", "truth", "disobedience", "matter"];
